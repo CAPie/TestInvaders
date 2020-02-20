@@ -1,0 +1,13 @@
+{
+    "landingSpeed": 0.1,
+    "minSpeed": 1,
+    "maxSpeed": 10,
+    "minReloadTime": 0.5,
+    "maxReloadTime": 4, 
+	"enemyRows": [
+		{"enemyItems": ["Enemy_3"]}, 
+		{"enemyItems": ["Enemy_2"]}, 
+		{"enemyItems": ["Enemy_1"]}, 
+		{"enemyItems": ["Enemy_1"]}
+	]
+}

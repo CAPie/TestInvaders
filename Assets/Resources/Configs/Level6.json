@@ -1,0 +1,13 @@
+{
+    "landingSpeed": 0.3,
+    "minSpeed": 1,
+    "maxSpeed": 5,
+    "minReloadTime": 1,
+    "maxReloadTime": 3, 
+	"enemyRows":[
+		{"enemyItems": ["Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3"]}, 
+		{"enemyItems": ["Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3", "Enemy_3"]}, 
+		{"enemyItems": ["Enemy_ufo", "Enemy_2", "Enemy_ufo", "Enemy_2", "Enemy_ufo", "Enemy_2", "Enemy_ufo", "Enemy_2", "Enemy_ufo"]}, 
+		{"enemyItems": ["", "Enemy_1", "", "Enemy_1", "", "Enemy_1", "", "Enemy_1", ""]}
+	]
+}

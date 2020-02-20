@@ -1,0 +1,14 @@
+{
+    "landingSpeed": 0.3,
+    "minSpeed": 1,
+    "maxSpeed": 5,
+    "minReloadTime": 1,
+    "maxReloadTime": 3, 
+	"enemyRows":[
+		{"enemyItems": ["Enemy_1", "Enemy_2", "Enemy_3", "Enemy_2", "Enemy_1"]}, 
+		{"enemyItems": ["Enemy_1", "Enemy_2", "Enemy_3", "Enemy_2", "Enemy_1"]}, 
+		{"enemyItems": ["Enemy_1", "Enemy_2", "Enemy_3", "Enemy_2", "Enemy_1"]}, 
+		{"enemyItems": ["Enemy_1", "Enemy_2", "Enemy_3", "Enemy_2", "Enemy_1"]}, 
+		{"enemyItems": ["Enemy_1", "Enemy_2", "Enemy_3", "Enemy_2", "Enemy_1"]}
+	]
+}
