@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameEvents
 {
+    private readonly string LOG_FORMAT = "[GameEvents] {0}({1})";
     private static GameEvents _instance;
     public static GameEvents Instance { get {
             if (_instance == null)
@@ -15,11 +16,12 @@ public class GameEvents
 
     // == PLAYER ======================
     public event Action<PalyerController> OnPlayerStatsUpdate;
-    public void PlayerStatsUpdate(PalyerController palyer)
+    public void PlayerStatsUpdate(PalyerController player)
     {
         if(OnPlayerStatsUpdate != null)
         {
-            OnPlayerStatsUpdate(palyer);
+            Debug.Log(string.Format(LOG_FORMAT, "PlayerStatsUpdate", player));
+            OnPlayerStatsUpdate(player);
         }
     }
 
@@ -29,6 +31,7 @@ public class GameEvents
     {
         if(OnGameStatsUpdate != null)
         {
+            Debug.Log(string.Format(LOG_FORMAT, "GameStatsUpdate", game));
             OnGameStatsUpdate(game);
         }
     }
@@ -38,6 +41,7 @@ public class GameEvents
     {
         if(OnGameOver != null)
         {
+            Debug.Log(string.Format(LOG_FORMAT, "OnGameOver", win));
             OnGameOver(win);
         }
     }
@@ -47,6 +51,7 @@ public class GameEvents
     {
         if(OnNewGame != null)
         {
+            Debug.Log(string.Format(LOG_FORMAT, "OnGameOver", ""));
             OnNewGame();
         }
     }
@@ -56,6 +61,7 @@ public class GameEvents
     {
         if(OnEnemyKilled != null)
         {
+            Debug.Log(string.Format(LOG_FORMAT, "EnemyKilled", enemy.NamedItem().definedName));
             OnEnemyKilled(enemy);
         }
     }
@@ -66,6 +72,7 @@ public class GameEvents
     {
         if (OnPauseGame != null)
         {
+            Debug.Log(string.Format(LOG_FORMAT, "OnPauseGame", ""));
             OnPauseGame();
         }
     }
@@ -75,6 +82,7 @@ public class GameEvents
     {
         if (OnPauseGameValue != null)
         {
+            Debug.Log(string.Format(LOG_FORMAT, "PauseGameValue", value));
             OnPauseGameValue(value);
         }
     }

@@ -32,6 +32,7 @@ public class PalyerController : MonoBehaviour, IDamagable, IShootingItem
     {
         _game = GetComponentInParent<GameController>();
         GameEvents.Instance.OnAttackInput += Shoot;
+        GameEvents.Instance.OnNewGame += () => GameEvents.Instance.PlayerStatsUpdate(this);
         GameEvents.Instance.OnGameOver += (win) => { if (!win) CurrentHealth = maxHealth; };
     }
 

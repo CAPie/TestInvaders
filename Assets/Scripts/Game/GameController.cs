@@ -89,7 +89,7 @@ public class GameController: MonoBehaviour
         }
         else
         {
-            GameEvents.Instance.OnNewGame += OnNewGame;
+            GameEvents.Instance.OnNewGame += OnRestartGame;
         }
     }
 
@@ -97,8 +97,8 @@ public class GameController: MonoBehaviour
     {
         GameEvents.Instance.OnNewGame -= OnRestartGame;
         Score = 0;
-
-        InitLevel().Init(_levelName);
+        _levelName = InitLevel().Init(_levelName);
+        Debug.Log("RESTART LEVEL: " + _levelName);
     }
 
     private void OnNewGame()
@@ -106,6 +106,7 @@ public class GameController: MonoBehaviour
         GameEvents.Instance.OnNewGame -= OnNewGame;
 
         _levelName = InitLevel().InitNew();
+        Debug.Log("NEW LEVEL: " + _levelName);
     }
 
     private EnemiesController InitLevel()
@@ -121,6 +122,7 @@ public class GameController: MonoBehaviour
 
         IsPause = false;
         IsGameStarted = true;
+        GameEvents.Instance.PauseGameValue(IsPause);
 
         return _levelSetup;
     }

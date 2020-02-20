@@ -55,12 +55,14 @@ public class Bullet : PoolItem
     public override void LoadFromPool()
     {
         GameEvents.Instance.OnPauseGameValue += OnPauseGame;
+        GameEvents.Instance.OnGameOver += OnGameOver;
         gameObject.SetActive(true);
     }
 
     public override void ReturnToPool()
     {
         GameEvents.Instance.OnPauseGameValue += OnPauseGame;
+        GameEvents.Instance.OnGameOver -= OnGameOver;
         gameObject.SetActive(false);
     }
 
@@ -72,5 +74,10 @@ public class Bullet : PoolItem
     private void OnPauseGame(bool value)
     {
         _isPause = value;
+    }
+
+    private void OnGameOver(bool value)
+    {
+        ReturnToPool();
     }
 }
